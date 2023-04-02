@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Inheritance JavaScript</title>
+</head>
+<body>
+   <h1>Belajar Inheritance Pada JavaScript</h1>
+
+   <script>
+
+      class Vehicle {
+         constructor(licensePlate, manufacture) {
+            this.licensePlate = licensePlate;
+            this.manufacture = manufacture;
+            this.engineActive = false;
+         }
+
+         startEngines() {
+            console.log(`Mesin kendaraan ${this.licensePlate} dinyalakan!`);
+         }
+
+         info() {
+            console.log(`Nomor Kendaraan: ${this.licensePlate}`);
+            console.log(`Manufacture: ${this.manufacture}`);
+            console.log(`Mesin: ${this.engineActive ? 'Active' : 'Inactive'}`);
+         }
+
+         parking() {
+            console.log(`Kendaraan ${this.licensePlate} parkir!`);
+         }
+      }
+
+      class Car extends Vehicle {
+         constructor(licensePlate, manufacture, wheels) {
+            super(licensePlate, manufacture);
+            this.wheels = wheels;
+         }
+
+         droveOff() {
+            console.log(`Kendaraan ${this.licensePlate} melaju!`);
+         }
+
+         openDoor() {
+            console.log(`Membuka pintu!`);
+         }
+
+         /* overriding method info dari parent class */
+         infoCar() {
+            super.info();
+            console.log(`Jumlah roda: ${this.wheels}`);
+         }
+      }
+
+      class SepedaMotor extends Car {
+         constructor (licensePlate, manufacture, wheels, color) {
+            super(licensePlate, manufacture, wheels);
+            this.color = color;
+         }
+
+         infoMotor() {
+            super.infoCar();
+         }
+      }
+
+      const car = new Car('H121S', 'Honda', 4);
+      car.startEngines();
+      car.droveOff();
+      car.infoCar();
+
+      const sepeda = new SepedaMotor('Y201S', 'Yamaha', 2, 'Red');
+      sepeda.infoMotor();
+
+   </script>
+</body>
+</html>

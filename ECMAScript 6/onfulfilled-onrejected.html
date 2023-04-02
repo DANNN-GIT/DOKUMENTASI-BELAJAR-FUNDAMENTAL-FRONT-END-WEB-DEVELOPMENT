@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Fungsi onFulfilled dan onRejected</title>
+</head>
+<body>
+   <h1>Belajar Fungsi onFulfilled dan onRejected Pada JavaScript</h1>
+
+   <script>
+      // Dicoding version
+      const executorFunction = (resolve, reject) => {
+         const isCoffeeMakerReady = false;
+         if (isCoffeeMakerReady) {
+            resolve('Kopi berhasil dibuat');
+         } else {
+            reject('Mesin Kopi tidak bisa digunakan!');
+         }
+      };
+      const handlerSuccess = resolvedValue => {
+         console.log(resolvedValue);
+      }
+      const handlerRejected = rejectionReason => {
+         console.log(rejectionReason)
+      };
+      const makeCoffee = new Promise(executorFunction);
+      makeCoffee.then(handlerSuccess, handlerRejected);
+
+      // My version
+      let requestMovies = true;
+      const movies  = new Promise((resolve, rejected) => {
+         if (requestMovies) {
+            resolve('Berhasil mengambil data movies');
+         } else {
+            rejected('Gagal mengambil data movies!');
+         }
+      });
+      movies.then(response => console.log(response));
+      movies.catch(response => console.log(response));
+
+   </script>
+</body>
+</html>

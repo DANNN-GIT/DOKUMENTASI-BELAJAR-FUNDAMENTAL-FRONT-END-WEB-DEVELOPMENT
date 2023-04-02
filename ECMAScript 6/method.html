@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Method JavaScript</title>
+</head>
+<body>
+   <h1>Belajar Membuat dan Menggunakan Method Pada JavaScript</h1>
+
+   <script>
+
+      class Car {
+         constructor(manufacture, color) {
+            this.manufacture = manufacture;
+            this.color = color;
+            this.enginesActive = false;
+         }
+
+         startEngines() {
+            console.log('Mesin dinyalakan');
+            this.enginesActive = true;
+         }
+
+         info() {
+            console.log(`Manufacture: ${this.manufacture}`);
+            console.log(`Color: ${this.color}`);
+            console.log(`Engines: ${this.enginesActive ? 'Active' : 'Inactive'}`);
+         }
+      }
+
+      const johnCar = new Car('Honda', 'Red');
+      johnCar.startEngines();
+      johnCar.info();
+
+   </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Membuat Objek Promise</title>
+</head>
+<body>
+   <h1>Belajar Membuat Objek Promise di JavaScript</h1>
+
+   <script>
+      // Dalam promise terdapat 3 (tiga) kondisi, yakni:
+      // Pending (Janji sedang dalam proses)
+      // Fulfilled (Janji terpenuhi)
+      // Rejected (Janji gagal terpenuhi)
+      
+      const executorFunction = (resolve, reject) => {
+         const isCoffeMakerReady = false;
+         if (isCoffeMakerReady) {
+            resolve('Kopi berhasil dibuat');
+         } else {
+            reject('Mesin kopi tidak bisa digunakan!');
+         }
+      }
+
+      const makeCoffe = new Promise(executorFunction);
+      console.log(makeCoffe);
+
+   </script>
+</body>
+</html>

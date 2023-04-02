@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Destructuring Object</title>
+</head>
+<body>
+   <h1>Belajar Destructuring Object Pada JavaScript</h1>
+
+   <h2 id="profile"></h2>
+
+   <script>
+
+      const mahasiswa = {
+         firstname: 'Ahmad',
+         lastname: 'Wildan',
+         'tanggal lahir': '27 Oktober 2000',
+         age: 20
+      };
+
+      let firstname = 'Amalia Siska';
+      let lastname = 'Kurniawati';
+
+      ({firstname, lastname, 'tanggal lahir':birthday, age, isMale = true} = mahasiswa);
+
+      document.getElementById('profile').innerHTML = `
+         ${firstname}
+         ${lastname}
+         ${birthday}
+         ${age}
+         ${isMale}
+      `;
+
+   </script>
+</body>
+</html>

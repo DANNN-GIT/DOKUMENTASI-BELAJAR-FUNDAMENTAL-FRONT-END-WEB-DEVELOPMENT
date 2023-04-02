@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Keyword this pada Arrow Function</title>
+</head>
+<body>
+   <h1>Belajar Keyword this pada Arrow Function</h1>
+
+   <script>
+
+      function People(name, age, hobby) {
+         this.name = name;
+         this.age = age;
+         this.hobby = hobby;
+      }
+      const programmer = new People('John', 18, ['Coding', 'Read book', 'Ping-pong']);
+      console.log(programmer.name, programmer.age, ...programmer.hobby);
+
+      function Mahasiswa(name, age, hobby) {
+         this.name = name;
+         this.age = age;
+         this.hobby = hobby;
+      }
+
+      // menambahkan introMyself ke Mahasiswa
+      Mahasiswa.prototype.introMyself = function () {
+         // this -> Mahasiswa
+         // setTimeout(function () {
+         setTimeout(_ => {
+            // this -> ??
+            console.log(`Hello! Nama saya ${this.name}, umur saya ${this.age}.`);
+            console.log(`Hobby saya adalah ${this.hobby}`);
+         }, 300);
+      };
+
+      const biodata = new Mahasiswa('John', 18, ['Coding', 'Read book', 'Ping-pong']);
+      biodata.introMyself();
+
+   </script>
+</body>
+</html>

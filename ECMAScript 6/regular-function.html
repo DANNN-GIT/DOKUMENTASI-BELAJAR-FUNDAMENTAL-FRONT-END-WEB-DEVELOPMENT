@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Regular Function</title>
+</head>
+<body>
+   <h1>Belajar Menggunakan Regular Function</h1>
+
+   <script>
+
+      // function declaration
+      function sayHello(greet) {
+         console.log(`${greet}!`);
+      }
+      sayHello('awdawd');
+
+      // function expression
+      const sayName = function (name) {
+         console.log(`Nama saya ${name}`);
+      };
+      sayName('Ahmad Wildan');
+
+      const sayNameArrow = ['Dimas', 'Widy', 'Buchori'].forEach(
+         name => console.log(`Nama saya ${name}`)
+      );
+
+      const user = {
+         introduce: name => console.log(`Nama saya ${name}`),
+      }
+      user.introduce('Ananda Ayu');
+
+   </script>
+</body>
+</html>

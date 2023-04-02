@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Template Literals JavaScript</title>
+</head>
+<body>
+   <h1>Memahami Penggunaan Template Literals Pada JavaScript</h1>
+
+   <script>
+      // Di bawah ini merupakan cara lama sebelum muncul ES6.
+      const user = {
+         firstName: 'Dimas',
+         lastName: 'Saputra',
+         age: 18,
+      };
+
+      const admin = {
+         name: 'Jane',
+         position: 'Marketing',
+      };
+
+      const message = 'Dear, ' + user.firstName + ' ' + user.lastName + '\n\n' +
+         'Selamat ulang tahun yang ke-' + user.age + ' semoga selalu diberikan kesehatan.' + '\n\n' +
+         'Best Regards,\n' +
+         admin.name + '\n' +
+         admin.position;
+
+      console.log(message);
+
+      // Cara terbaru menggunakan backticks (`)
+      const mahasiswa = {
+         firstName: 'Dimas',
+         lastName: 'Saputra',
+         age: 18,
+      };
+
+      const dosen = {
+         name: 'Jane',
+         position: 'Marketing',
+      };
+
+      const sendMessage = `
+         Dear, ${mahasiswa.firstName} ${mahasiswa.lastName} 
+         
+         Selamat ulang tahun yang ke-${mahasiswa.age} semoga selalu diberikan kesehatan.
+         
+         Best Regards,
+         ${dosen.name}
+         ${dosen.position}
+      `;
+      console.log(sendMessage);
+
+   </script>
+</body>
+</html>

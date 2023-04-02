@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Property Accessor</title>
+</head>
+<body>
+   <h1>Belajar Property Accessor Pada Javascript</h1>
+
+   <script>
+
+      class Car {
+         constructor(manufacture, color) {
+            this._manufacture = manufacture;
+            this._color = color;
+            this.enginesActive = false;
+         }
+
+         get manufacture() {
+            return `Merk mobil: ${this._manufacture}`;
+         }
+
+         set manufacture(value) {
+            console.log(`Merk mobil diubah dari ${this._manufacture} menjadi ${value}`);
+            this._manufacture = value;
+         }
+
+         get color() {
+            return `Warna mobil: ${this._color}`;
+         }
+
+         set color(value) {
+            console.log(`Warna mobil diubah dari ${this._color} menjadi ${value}`);
+            this._color = value;
+         }
+      }
+
+      const johnCar = new Car('Honda', 'Red');
+      console.log(johnCar.manufacture); // output -> Merk Mobil: Honda
+      console.log(johnCar.color); // output -> Warna Mobil: Red
+
+      johnCar.manufacture = 'Yamaha'; // Mengubah nilai properti manufacture menjadi Yamaha
+      console.log(johnCar.manufacture); // output -> Merk Mobil: Yamaha
+
+      johnCar.color = 'White'; // Mengubah nilai properti color menjadi white
+      console.log(johnCar.color); // output -> Warna Mobil: White
+
+   </script>
+</body>
+</html>

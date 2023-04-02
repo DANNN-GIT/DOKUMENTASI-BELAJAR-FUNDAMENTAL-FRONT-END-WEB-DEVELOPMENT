@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Apa itu Class pada JavaScript</title>
+</head>
+<body>
+   <h1>Belajar Class Pada JavaScript</h1>
+
+   <script>
+      
+      // Class Sebelum ES6
+      function Car(manufacture, color) {
+         this.manufacture = manufacture;
+         this.color = color;
+         this.enginesActive = false;
+      }
+      Car.prototype.startEngines = function () {
+         console.log('Mobil dinyalakan...');
+         this.enginesActive = true;
+      };
+      Car.prototype.info = function () {
+         console.log('Manufacture: ' + this.manufacture);
+         console.log('Color: ' + this.color);
+         console.log('Engines: ' + (this.enginesActive ? 'Active' : 'Inactive'));
+      };
+      var johnCar = new Car('Honda', 'Red');
+      johnCar.startEngines();
+      johnCar.info();
+
+      // ES6 Class
+      class NewCar {
+         // Sama seperti function constructor
+         constructor(manufacture, color) {
+            this.manufacture = manufacture;
+            this.color = color;
+            this.enginesActive = false;
+         }
+         
+         // Sama seperti Car.prototype.startEngine
+         startEngines() {
+            console.log('Mobil dinyalakan...');
+            this.enginesActive = true;
+         }
+         
+         // Sama seperti car.prototype.info
+         info() {
+            console.log(`Manufacture: ${this.manufacture}`);
+            console.log(`Color:  ${this.color}`);
+            console.log(`Engines: ${this.enginesActive ? 'Active' : 'Inactive'}`);
+         }
+      }
+      const dannnCar = new NewCar('Ferrari', 'Black');
+      dannnCar.startEngines();
+      dannnCar.info();
+
+   </script>
+</body>
+</html>
