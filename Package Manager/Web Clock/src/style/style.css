@@ -1,0 +1,28 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Courier New', Courier, monospace;
+}
+body {
+   background-color: #2b2b2b;
+}
+.clock {
+   color: white;
+   display: flex;
+   flex-direction: column;
+   font-weight: bolder;
+   width: 50%;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+.clock .time {
+   font-size: 100px;
+   margin: 0 auto;
+}
+.clock .date {
+   font-size: 40px;
+   margin: 0 auto;
+}
